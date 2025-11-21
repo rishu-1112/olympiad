@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import ThankYouPopup from "./ThankYouPopup";
+import ThankYouPopup from "./ThankYouPopUp.jsx";
 import { API_URL } from "../api";
 
 const BACKEND_BASE = API_URL || "http://localhost:5000";

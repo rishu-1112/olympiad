@@ -62,7 +62,7 @@ export default function OlympiadBottomSection() {
               md:w-[320px] md:h-[320px] 
               flex-shrink-0
             "
-            style={{ transform: "translateX(-7rem)" }} // more left shift
+            style={{ transform: "translateX(-7rem)" }}
           >
             <svg
               viewBox="0 0 800 600"
@@ -96,7 +96,7 @@ export default function OlympiadBottomSection() {
             />
           </div>
 
-          {/* ---------- WIDER & SHORTER STEPS BOXES ---------- */}
+          {/* ---------- WAVE POSITIONED STEPS ---------- */}
           <div
             className="
               flex-1 
@@ -110,22 +110,27 @@ export default function OlympiadBottomSection() {
               {
                 color: "#7C4DFF",
                 text: "Register your school or individual child",
+                y: "0px",
               },
               {
                 color: "#0057FF",
                 text: "Receive your Phonics Olympiad Kit with self-paced activities",
+                y: "25px",
               },
               {
                 color: "#00B4FF",
                 text: "Practice anytime, anywhere - guided by fun learning material",
+                y: "-20px",
               },
               {
                 color: "#00C08A",
                 text: "Appear for the Championship (Conducted at your school)",
+                y: "25px",
               },
               {
                 color: "#7ED321",
                 text: "Celebrate success with medals, certificates & scholarships!",
+                y: "0px",
               },
             ].map((step, index) => (
               <div
@@ -145,6 +150,7 @@ export default function OlympiadBottomSection() {
                 "
                 style={{
                   borderColor: step.color,
+                  transform: `translateY(${step.y})`,
                 }}
               >
                 {/* Step Number */}
@@ -167,7 +173,7 @@ export default function OlympiadBottomSection() {
                   {index + 1}
                 </div>
 
-                {/* Step Text  */}
+                {/* Step Text */}
                 <p
                   className="
                     font-bold 

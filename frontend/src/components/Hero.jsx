@@ -5,7 +5,7 @@ import girlImg from "../assets/demot-Photoroom.png";
 import logo from "../assets/logo.png";
 import { API_URL } from "../api"; // optional, keep if you have it
 import toast, { Toaster } from "react-hot-toast";
-import ThankYouPopup from "./ThankYouPopup"; // ensure file is named ThankYouPopup.jsx exactly
+import ThankYouPopup from "./ThankYouPopUp.jsx"; // ensure file is named ThankYouPopup.jsx exactly
 import HowItWorksPopup from "./HowItWorksPopup";
 
 
@@ -245,9 +245,9 @@ const Hero = () => {
           </p>
 
           <div className="mt-6 flex justify-center md:justify-start gap-4">
-            <button className="bg-[#ffd033] text-[#341b79] px-6 py-2 rounded-full font-semibold shadow">
+            {/* <button className="bg-[#ffd033] text-[#341b79] px-6 py-2 rounded-full font-semibold shadow">
               Learn More
-            </button>
+            </button> */}
             <button onClick={() => setShowHowItWorks(true)} className="bg-white/20 px-5 py-2 rounded-full border border-white/40 backdrop-blur-sm flex items-center gap-2">
               <span className="h-5 w-5 bg-white text-[#ff1e9d] flex justify-center items-center rounded-full text-[10px] font-bold">
                 ▶
