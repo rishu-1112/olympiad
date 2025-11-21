@@ -8,6 +8,7 @@ import Registration from "./components/RegistrationForm";
 function App() {
   return (
     <>
+    <div id="popup-root" className="relative z-[1]"></div>
     <Registration/>
     <Hero/>
     <Partners/>
