@@ -23,22 +23,6 @@ app.post("/register", async (req, res) => {
   const { parentName, childName, className, mobile, email } = req.body;
 
   try {
-    // 1️⃣ Email to User
-    if (email) {
-      await transporter.sendMail({
-        from: process.env.EMAIL_USER,
-        to: email,
-        subject: "🎉 Registration Successful – Phonics Olympiad",
-        html: `
-          <h2>Thank you for registering!</h2>
-          <p>Hello <b>${parentName}</b>,</p>
-          <p>You have successfully registered <b>${childName}</b> for the 
-          <strong>Phonics Olympiad</strong>.</p>
-          <p>We will contact you soon with further details.</p>
-          <br><p>Regards,<br>Phonics Olympiad Team</p>
-        `,
-      });
-    }
 
     // 2️⃣ Email to Admin
     await transporter.sendMail({

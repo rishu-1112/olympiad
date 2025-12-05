@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import logo1 from "../assets/wonderKIdz.png";
 import logo2 from "../assets/appleSchool.jpg"; // second partner logo
 import logo3 from "../assets/phonics.jpg";
+import logo4 from "../assets/finch.jpg";
 
 import mathImg from "../assets/math-Photoroom.png";
 import p from "../assets/greenP.png";
@@ -23,6 +24,10 @@ const Partners = () => {
       logo: logo3,
       name: "Phonics World",
       location: "Pune"
+    },{
+      logo: logo4,
+      name: "Finch International Preschool",
+      location: "Khardi,Pune"
     }
   ];
 
