@@ -203,7 +203,7 @@ const Hero = () => {
         initial={{ opacity: 0, y: -15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="absolute top-4 left-4 h-14 w-auto md:h-16 z-50"
+        className="absolute top-4 left-4 h-10 w-auto md:h-16 z-50"
       />
 
       {/* BACKGROUND BLOB */}

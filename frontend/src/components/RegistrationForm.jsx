@@ -5,21 +5,32 @@ import { API_URL } from "../api";
 
 const BACKEND_BASE = API_URL || "http://localhost:5000";
 
-export default function FirstVisitRegistrationPopup() {
+export default function FirstVisitRegistrationPopup({ showRegistration, setShowRegistration }) {
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [thankYou, setThankYou] = useState(false);
   const [registrationId, setRegistrationId] = useState(null);
 
   useEffect(() => {
+    // Handle external control from sticky button
+    if (showRegistration !== undefined) {
+      setOpen(showRegistration);
+    }
+  }, [showRegistration]);
+
+  useEffect(() => {
+    // Handle first visit popup
     const seen = localStorage.getItem("olympiadPopupSeen");
-    if (seen) {
+    if (seen && showRegistration === undefined) {
       setTimeout(() => setOpen(true), 200);
     }
-  }, []);
+  }, [showRegistration]);
 
   const closePopup = () => {
     setOpen(false);
+    if (setShowRegistration) {
+      setShowRegistration(false);
+    }
     localStorage.setItem("olympiadPopupSeen", "1");
   };
 
