@@ -95,17 +95,28 @@ const PhonicsBooksSection = () => {
 
       {/* 📖 SINGLE BOOK PREVIEW MODAL */}
 {selectedBook && (
-  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-3 sm:p-4">
     <motion.div
-      initial={{ scale: 0.85, opacity: 0 }}
+      initial={{ scale: 0.9, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ duration: 0.3, ease: "easeOut" }}
-      className="relative bg-white rounded-3xl p-6 max-w-lg w-full shadow-2xl"
+      className="
+        relative bg-white rounded-3xl shadow-2xl
+        w-full max-w-lg
+        max-h-[92vh] overflow-y-auto
+        p-4 sm:p-6
+      "
     >
       {/* Close Button */}
       <button
         onClick={() => setSelectedBook(null)}
-        className="absolute top-4 right-4 h-9 w-9 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-gray-200"
+        className="
+          absolute top-3 right-3
+          h-8 w-8 sm:h-9 sm:w-9
+          rounded-full bg-gray-100
+          flex items-center justify-center
+          text-gray-600 hover:bg-gray-200
+        "
       >
         ✕
       </button>
@@ -114,41 +125,45 @@ const PhonicsBooksSection = () => {
       <img
         src={selectedBook.img}
         alt={selectedBook.title}
-        className="h-64 w-full object-contain mx-auto"
+        className="
+          mx-auto object-contain
+          h-44 sm:h-56 md:h-64
+        "
       />
 
       {/* Title */}
-      <h3 className="mt-4 text-2xl font-extrabold text-[#341b79] text-center">
+      <h3 className="mt-4 text-lg sm:text-xl md:text-2xl font-extrabold text-[#341b79] text-center">
         {selectedBook.title}
       </h3>
 
       {/* Meta */}
-      <p className="mt-1 text-center text-sm text-gray-500">
+      <p className="mt-1 text-center text-xs sm:text-sm text-gray-500">
         Level: <span className="font-semibold">{selectedBook.level}</span> · Age:{" "}
         <span className="font-semibold">{selectedBook.ageGroup}</span>
       </p>
+
       {/* Subject */}
-        <p className="mt-1 text-center text-sm text-gray-500">
+      <p className="text-center text-xs sm:text-sm text-gray-500 mt-1">
         Subject: <span className="font-semibold">{selectedBook.subject}</span>
-        </p>
+      </p>
 
       {/* Description */}
-      <p className="mt-4 text-sm text-gray-700 leading-relaxed text-center">
+      <p className="mt-4 text-sm sm:text-base text-gray-700 leading-relaxed text-center px-1 sm:px-4">
         {selectedBook.description}
       </p>
 
       {/* Highlights */}
       {selectedBook.highlights && (
         <div className="mt-5 bg-[#fff6cc] rounded-2xl p-4">
-          <h4 className="text-sm font-bold text-[#341b79] mb-2 text-center">
+          <h4 className="text-sm font-bold text-[#341b79] mb-3 text-center">
             What your child will learn
           </h4>
 
-          <ul className="grid grid-cols-2 gap-2 text-xs text-gray-700">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm text-gray-700">
             {selectedBook.highlights.map((item, idx) => (
               <li
                 key={idx}
-                className="flex items-center gap-2 bg-white rounded-full px-3 py-1 shadow-sm"
+                className="flex items-center gap-2 bg-white rounded-full px-3 py-2 shadow-sm"
               >
                 <span className="text-[#ff1e9d]">✔</span>
                 {item}
@@ -159,14 +174,15 @@ const PhonicsBooksSection = () => {
       )}
 
       {/* CTA */}
-      <div className="mt-6 flex justify-center gap-3">
-        {/* <button className="bg-[#341b79] text-white px-6 py-2 rounded-full font-semibold hover:scale-105 transition">
-          📥 Download Sample
-        </button> */}
-
+      <div className="mt-6 flex justify-center">
         <button
           onClick={() => setSelectedBook(null)}
-          className="bg-[#ffd033] text-[#341b79] px-6 py-2 rounded-full font-semibold hover:scale-105 transition"
+          className="
+            bg-[#ffd033] text-[#341b79]
+            px-6 py-2 rounded-full
+            font-semibold
+            hover:scale-105 transition
+          "
         >
           Close
         </button>
@@ -174,6 +190,7 @@ const PhonicsBooksSection = () => {
     </motion.div>
   </div>
 )}
+
 
     </>
   );
