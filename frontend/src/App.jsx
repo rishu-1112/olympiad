@@ -7,6 +7,7 @@ import WhyParticipate from "./components/WhyParticipate";
 import Process from "./components/Process";
 import Registration from "./components/RegistrationForm";
 import StickyRegisterBtn from "./components/StickyRegisterBtn";
+import PhonicsBooksSection from "./components/PhonicsBooksSection";
 
 function App() {
   const [showRegistration, setShowRegistration] = useState(false);
@@ -17,6 +18,7 @@ function App() {
     <Registration showRegistration={showRegistration} setShowRegistration={setShowRegistration}/>
     <StickyRegisterBtn onClick={() => setShowRegistration(true)} />
     <Hero/>
+    <PhonicsBooksSection/>
     <Partners/>
     <NextSection/>
     <WhyParticipate/>

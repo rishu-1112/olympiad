@@ -5,6 +5,18 @@ import { API_URL } from "../api";
 
 const BACKEND_BASE = API_URL || "http://localhost:5000";
 
+// Age group mapping for classes
+const CLASS_AGE_MAP = {
+  "Nursery": "3-4 years",
+  "LKG": "4-5 years",
+  "UKG": "5-6 years",
+  "Grade 1": "6-7 years",
+  "Grade 2": "7-8 years",
+  "Grade 3": "8-9 years"
+};
+
+const getAgeGroup = (className) => CLASS_AGE_MAP[className] || "";
+
 export default function FirstVisitRegistrationPopup({ showRegistration, setShowRegistration }) {
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -49,8 +61,8 @@ export default function FirstVisitRegistrationPopup({ showRegistration, setShowR
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!formData.parentName || !formData.childName || !formData.mobile) {
-      toast.error("Please fill required fields");
+    if (!formData.parentName || !formData.childName || !formData.mobile || !formData.email) {
+      toast.error("Please fill all required fields");
       return;
     }
 
@@ -112,16 +124,16 @@ export default function FirstVisitRegistrationPopup({ showRegistration, setShowR
               <select name="className" value={formData.className} onChange={handleChange}
                 className="input-field bg-[#fff7b3] text-[#341b79] font-semibold">
                 <option value="">Select Class</option>
-                <option>Nursery</option>
-                <option>LKG</option>
-                <option>UKG</option>
-                <option>Grade 1</option>
-                <option>Grade 2</option>
-                <option>Grade 3</option>
+                <option>Nursery (3-4 years)</option>
+                <option>LKG (4-5 years)</option>
+                <option>UKG (5-6 years)</option>
+                <option>Grade 1 (6-7 years)</option>
+                <option>Grade 2 (7-8 years)</option>
+                <option>Grade 3 (8-9 years)</option>
               </select>
 
               <input name="mobile" value={formData.mobile} onChange={handleChange} className="input-field" placeholder="Parent Mobile Number" />
-              <input name="email" value={formData.email} onChange={handleChange} className="input-field" placeholder="Email (optional)" />
+              <input name="email" value={formData.email} onChange={handleChange} className="input-field" placeholder="Email" required />
 
               <button
                 type="submit"

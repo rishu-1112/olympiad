@@ -11,6 +11,18 @@ import HowItWorksPopup from "./HowItWorksPopup";
 
 const BACKEND_BASE = (typeof API_URL !== "undefined" && API_URL) || "http://localhost:5000";
 
+// Age group mapping for classes
+const CLASS_AGE_MAP = {
+  "Nursery": "3-4 years",
+  "LKG": "4-5 years",
+  "UKG": "5-6 years",
+  "Grade 1": "6-7 years",
+  "Grade 2": "7-8 years",
+  "Grade 3": "8-9 years"
+};
+
+const getAgeGroup = (className) => CLASS_AGE_MAP[className] || "";
+
 const Hero = () => {
   const [formData, setFormData] = useState({
     parentName: "",
@@ -49,8 +61,8 @@ const Hero = () => {
   const handleSubmit = async (e) => {
     e && e.preventDefault();
     // client-side validation
-    if (!formData.parentName || !formData.childName || !formData.mobile) {
-      toast.error("Please fill required fields (Parent, Child, Mobile).");
+    if (!formData.parentName || !formData.childName || !formData.mobile || !formData.email) {
+      toast.error("Please fill all required fields.");
       return;
     }
     if (formData.mobile && formData.mobile.length !== 10) {
@@ -159,12 +171,12 @@ const Hero = () => {
                 className="input-field bg-[#fff7b3] text-[#341b79] font-semibold"
               >
                 <option value="">Select Class</option>
-                <option>Nursery</option>
-                <option>LKG</option>
-                <option>UKG</option>
-                <option>Grade 1</option>
-                <option>Grade 2</option>
-                <option>Grade 3</option>
+                <option>Nursery (3-4 years)</option>
+                <option>LKG (4-5 years)</option>
+                <option>UKG (5-6 years)</option>
+                <option>Grade 1 (6-7 years)</option>
+                <option>Grade 2 (7-8 years)</option>
+                <option>Grade 3 (8-9 years)</option>
               </select>
               <input
                 name="mobile"
@@ -180,8 +192,9 @@ const Hero = () => {
                 value={formData.email}
                 onChange={handleChange}
                 type="email"
-                placeholder="Email (optional)"
+                placeholder="Email"
                 className="input-field"
+                required
               />
 
               <button
@@ -203,7 +216,11 @@ const Hero = () => {
         initial={{ opacity: 0, y: -15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="absolute top-4 left-4 h-10 w-auto md:h-16 z-50"
+        className="
+          absolute top-3 left-3 z-50
+          h-8 sm:h-10 md:h-14 lg:h-16
+          w-auto
+        "
       />
 
       {/* BACKGROUND BLOB */}
@@ -230,13 +247,21 @@ const Hero = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="w-full text-center mt-8 md:w-1/2 md:text-left md:mt-0 md:ml-[140px] lg:ml-[240px] xl:ml-[300px]"
+          className="
+            w-full text-center
+            pt-24 sm:pt-28 md:pt-0   /* 🔥 padding for mobile only */
+            md:w-1/2
+            md:text-left
+            md:mt-0
+            md:ml-[140px] lg:ml-[240px] xl:ml-[300px]
+          "
         >
+
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-snug">
             Enroll Your Pre-School Into The
             <br />
             <span className="block mt-3 text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#ffd033] tracking-wide">
-              OLYMPIAD EXAM
+              INTERNATIONAL PHONICS OLYMPIAD
             </span>
           </h1>
 
@@ -298,12 +323,12 @@ const Hero = () => {
                 className="input-field bg-[#fff7b3] text-[#341b79] font-semibold"
               >
                 <option value="">Select Class</option>
-                <option>Nursery</option>
-                <option>LKG</option>
-                <option>UKG</option>
-                <option>Grade 1</option>
-                <option>Grade 2</option>
-                <option>Grade 3</option>
+                <option>Nursery (3-4 years)</option>
+                <option>LKG (4-5 years)</option>
+                <option>UKG (5-6 years)</option>
+                <option>Grade 1 (6-7 years)</option>
+                <option>Grade 2 (7-8 years)</option>
+                <option>Grade 3 (8-9 years)</option>
               </select>
 
               <input
@@ -321,8 +346,9 @@ const Hero = () => {
                 value={formData.email}
                 onChange={handleChange}
                 type="email"
-                placeholder="Email (optional)"
+                placeholder="Email"
                 className="input-field"
+                required
               />
 
               <button
