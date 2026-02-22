@@ -21,7 +21,19 @@ const floatingAnimation = {
 
 const PhonicsBooksSection = () => {
   const [selectedBook, setSelectedBook] = useState(null);
+  const [selectedClass, setSelectedClass] = useState("All");
+  const [selectedType, setSelectedType] = useState("All");
 
+
+  const filteredBooks = phonicsBooks.filter((book) => {
+    const classMatch =
+      selectedClass === "All" || book.level.includes(selectedClass);
+
+    const typeMatch =
+      selectedType === "All" || book.level.includes(selectedType);
+
+    return classMatch && typeMatch;
+  });
   return (
     <>
       {/* 📚 BOOK SECTION */}
@@ -39,7 +51,36 @@ const PhonicsBooksSection = () => {
             Fun, colourful and engaging workbooks designed especially for
             young learners.
           </p>
+          {/* FILTERS */}
+          <div className="flex flex-wrap gap-3 justify-center mt-8">
 
+            {/* Class Filter */}
+            <select
+              value={selectedClass}
+              onChange={(e) => setSelectedClass(e.target.value)}
+              className="px-4 py-2 rounded-full border text-sm"
+            >
+              <option value="All">All Classes</option>
+              <option value="Nursery">Nursery</option>
+              <option value="Junior KG">Junior KG</option>
+              <option value="Senior KG">Senior KG</option>
+              <option value="Grade 1">Grade 1</option>
+              <option value="Grade 2">Grade 2</option>
+              <option value="Grade 3">Grade 3</option>
+            </select>
+
+            {/* Type Filter */}
+            <select
+              value={selectedType}
+              onChange={(e) => setSelectedType(e.target.value)}
+              className="px-4 py-2 rounded-full border text-sm"
+            >
+              <option value="All">All Types</option>
+              <option value="School">Intra School</option>
+              <option value="Interschool">Interschool</option>
+              {/* <option value="International">International</option> */}
+            </select>
+          </div>
           {/* 🎠 CAROUSEL */}
           <div className="mt-12">
             <Swiper
@@ -54,7 +95,7 @@ const PhonicsBooksSection = () => {
                 1024: { slidesPerView: 4 },
               }}
             >
-              {phonicsBooks.map((book, index) => (
+              {filteredBooks.map((book, index) => (
                 <SwiperSlide key={book.id}>
                   <motion.div
                     {...floatingAnimation}
@@ -71,20 +112,34 @@ const PhonicsBooksSection = () => {
                     />
 
                     <div className="mt-4 text-center">
-                      <h3 className="font-bold text-[#341b79] text-sm">
-                        {book.title}
-                      </h3>
-                      <p className="text-xs text-gray-600 mt-1">
-                        Level: {book.level}
-                      </p>
+  <h3 className="font-bold text-[#341b79] text-sm">
+    {book.title}
+  </h3>
 
-                      <button
-                        onClick={() => setSelectedBook(book)}
-                        className="mt-4 bg-[#ff1e9d] text-white px-5 py-2 rounded-full text-xs font-semibold hover:bg-[#e4007c] transition"
-                      >
-                        View Book
-                      </button>
-                    </div>
+  <p className="text-xs text-gray-600 mt-1">
+    Level: {book.level}
+  </p>
+
+  <p className="text-sm font-bold text-[#ff1e9d] mt-2">
+    ₹499
+  </p>
+
+  <div className="flex justify-center gap-2 mt-3">
+    <button
+      onClick={() => setSelectedBook(book)}
+      className="bg-gray-200 px-4 py-2 rounded-full text-xs font-semibold"
+    >
+      View
+    </button>
+
+    <button
+      onClick={() => handleBuyNow(book)}
+      className="bg-[#ff1e9d] text-white px-4 py-2 rounded-full text-xs font-semibold hover:bg-[#e4007c]"
+    >
+      Buy Now
+    </button>
+  </div>
+</div>
                   </motion.div>
                 </SwiperSlide>
               ))}

@@ -4,6 +4,7 @@ export const phonicsBooks = [
     title: "Phonics Olympiad Workbook",
     subject: "Phonics",
     level: "Senior KG (School)",
+    type: "Intra",
     ageGroup: "5 – 6 years",
     img: "https://ik.imagekit.io/ja32746el/WhatsApp%20Image%202026-02-06%20at%2015.58.00.jpeg",
     description:
@@ -20,6 +21,7 @@ export const phonicsBooks = [
     title: "Phonics Olympiad Workbook",
     subject: "IPO Test Paper",
     level: "Grade 1 (School)",
+    type: "Intra",
     ageGroup: "6 – 7 years",
     img: "https://ik.imagekit.io/ja32746el/WhatsApp%20Image%202026-02-06%20at%2015.58.02.jpeg",
     description:
@@ -36,6 +38,7 @@ export const phonicsBooks = [
     title: "Phonics Olympiad Workbook",
     subject: "Consolidated",
     level: "Grade 2 (School)",
+    type: "Intra",
     ageGroup: "7 – 8 years",
     img: "https://ik.imagekit.io/ja32746el/WhatsApp%20Image%202026-02-06%20at%2015.58.03.jpeg",
     description:
@@ -52,6 +55,7 @@ export const phonicsBooks = [
     title: "Phonics Olympiad Workbook",
     subject: "Consolidated",
     level: "Grade 3 (School)",
+    type: "Intra",
     ageGroup: "8 – 9 years",
     img: "https://ik.imagekit.io/ja32746el/WhatsApp%20Image%202026-02-06%20at%2015.58.04.jpeg",
     description:
@@ -68,6 +72,7 @@ export const phonicsBooks = [
     title: "Phonics Olympiad Workbook",
     subject: "Phonics",
     level: "Junior KG (School)",
+    type: "Intra",
     ageGroup: "4 – 5 years",
     img: "https://ik.imagekit.io/ja32746el/WhatsApp%20Image%202026-02-06%20at%2015.58.08.jpeg",
     description:
@@ -84,6 +89,7 @@ export const phonicsBooks = [
     title: "Phonics Olympiad Workbook",
     subject: "Phonics",
     level: "Nursery (Interschool)",
+    type: "Interschool",
     ageGroup: "3 – 4 years",
     img: "https://ik.imagekit.io/ja32746el/WhatsApp%20Image%202026-02-06%20at%2015.58.12.jpeg",
     description:
@@ -100,6 +106,7 @@ export const phonicsBooks = [
     title: "Phonics Olympiad Workbook",
     subject: "Phonics",
     level: "Nursery (School)",
+    type: "Intra",
     ageGroup: "3 – 4 years",
     img: "https://ik.imagekit.io/ja32746el/WhatsApp%20Image%202026-02-06%20at%2015.58.10.jpeg",
     description:
@@ -116,6 +123,7 @@ export const phonicsBooks = [
     title: "Phonics Olympiad Workbook",
     subject: "Phonics",
     level: "Junior KG (Interschool)",
+    type: "Interschool",
     ageGroup: "4 – 5 years",
     img: "https://ik.imagekit.io/ja32746el/WhatsApp%20Image%202026-02-06%20at%2015.58.14.jpeg",
     description:
@@ -132,6 +140,7 @@ export const phonicsBooks = [
     title: "Phonics Olympiad Workbook",
     subject: "Phonics",
     level: "Senior KG (Interschool)",
+    type: "Interschool",
     ageGroup: "5 – 6 years",
     img: "https://ik.imagekit.io/ja32746el/WhatsApp%20Image%202026-02-06%20at%2015.58.16.jpeg",
     description:
@@ -148,6 +157,7 @@ export const phonicsBooks = [
     title: "Phonics Olympiad Workbook",
     subject: "Phonics",
     level: "Grade 1 (Interschool)",
+    type: "Interschool",
     ageGroup: "6 – 7 years",
     img: "https://ik.imagekit.io/ja32746el/WhatsApp%20Image%202026-02-06%20at%2015.58.18.jpeg",
     description:
@@ -164,6 +174,7 @@ export const phonicsBooks = [
     title: "Phonics Olympiad Workbook",
     subject: "Phonics",
     level: "Grade 2 (Interschool)",
+    type: "Interschool",
     ageGroup: "7 – 8 years",
     img: "https://ik.imagekit.io/ja32746el/WhatsApp%20Image%202026-02-06%20at%2015.58.20.jpeg",
     description:
@@ -180,6 +191,7 @@ export const phonicsBooks = [
     title: "Phonics Olympiad Workbook",
     subject: "Phonics",
     level: "Grade 3 (Interschool)",
+    type: "Interschool",
     ageGroup: "8 – 9 years",
     img: "https://ik.imagekit.io/ja32746el/WhatsApp%20Image%202026-02-06%20at%2015.58.22.jpeg",
     description:
